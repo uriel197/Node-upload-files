@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- title -->
+ <title>File Upload</title>
+ <!-- normalize css -->
+ <link rel="stylesheet" href="./normalize.css">
+ <!-- styles css -->
+ <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+ <form class="form file-form">
+  <h4>File Upload</h4>
+  <!-- single row -->
+  <div class="form-row">
+   <label for="name" class="form-label">Name</label>
+   <input type="text" id="name" class="form-input" value="computer">
+  </div>
+  <!-- end of single row -->
+  <!-- single row -->
+  <div class="form-row">
+   <label for="price" class="form-label">Price</label>
+   <input type="number" id="price" class="form-input" value="150.99">
+  </div>
+  <!-- end of single row -->
+  <!-- single row -->
+  <div class="form-row">
+   <label for="image" class="form-label">Image</label>
+   <input type="file" id="image" accept="image/*" > <!-- 1 -->
+  </div>
+  <!-- end of single row -->
+  
+   <button type="submit" class="btn btn-block">add product</button>
+  </div>
+  </form>
+<section class="container">
+</section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="./browser-app.js"></script>
+</body>
+</html>
+
+
+<!-- *************COMMENTS*************** -->
+<!-- 
+
+***1: The accept attribute specifies the types of files that the file input can accept. When you set it to "image/*", it means that the file input will only accept files with MIME types that match the image/* pattern, which includes all image file types.
+
+By setting accept="image/*", you're restricting the file input to only accept image files, such as JPEG, PNG, GIF, etc. This provides a hint to users about the types of files they should select when using the file input.
+
+******* <input type="file"> *********
+
+In HTML, an <input> element with the type="file" attribute allows users to select one or multiple files from their device. When a user selects one or more files using this input element, those files are stored in the files property of the input element.
+
+Since this input element can accept multiple files (if multiple attribute is present), the files property is an array-like object containing all selected files.
+
+However, if you only want to handle one file (the first one selected), you can access it using the index [0]. This ensures that even if the input allows multiple files to be selected, your code only handles the first one.
+-->
